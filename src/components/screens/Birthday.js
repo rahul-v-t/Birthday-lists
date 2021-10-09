@@ -9,30 +9,39 @@ export default function Birthday() {
     const [lists, setLists] = useState([
         {
             id:1,
-            name:"hello",
+            name:"Griffin Wooldridge",
             img : Img1,
+            age :"20 Years",
         },
         {
             id:2,
-            name:"hi",
+            name:"Hester Hogan",
             img : Img2,
+            age :"23 Years",
         },
         {
             id:3,
-            name:"hii",
+            name:"Danny winget",
             img : Img3,
+            age :"25 Years",
         },
         {
             id:4,
-            name:"hii",
+            name:"Jousha Vergara",
             img : Img4,
+            age :"20 Years",
         },
         {
             id:5,
-            name:"hii",
+            name:"Jon Rettinger",
             img : Img5,
+            age :"22 Years",
         }
+        
     ]);
+    const removeItem = () => {
+        setLists([]);
+    };
     return (
         <>
             <Container>
@@ -40,10 +49,11 @@ export default function Birthday() {
            <Listcontainer> {lists.map((item)=>(
                <>
                <Imagecontainer> <Imgcontainer> <Img src={item.img} alt="Images" /> </Imgcontainer>
-               <Itemcontainer> <Name> {item.name} </Name><Age> {item.id} </Age>  </Itemcontainer></Imagecontainer>
+               <Itemcontainer> <Name> {item.name} </Name><Age> {item.age} </Age>  </Itemcontainer></Imagecontainer>
                </>
+               
            ))}</Listcontainer>
-           <Button primary>Primary</Button>
+           <Button onClick={removeItem}>Clear All</Button>
            </Container>
         </>
     )
@@ -81,8 +91,19 @@ const Itemcontainer = styled.div `
     `;
 const Age = styled.span `
     font-family: 'baloo_paaji_2bold';
+    color:#afb5bd;
     `;
 const Name = styled.h3 `
     font-family: 'baloo_paaji_2bold';
     `;
-const Button = styled.button``;
+    const Button = styled.button`
+    color:#ffffff;
+    background:#d43d94;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 3px;
+    width: 75%;
+    margin-left: 100px;
+    margin-top: 30px;
+    cursor:pointer;
+  `;
